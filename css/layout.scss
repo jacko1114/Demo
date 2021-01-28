@@ -410,7 +410,10 @@ img {
     #collapse {
         pointer-events: auto;
     }
-
+    .logo{
+        width: 150px;
+        border-radius: 5px;
+    }
     .collapse.navbar-collapse {
         .navbar-nav {
             .nav-link {
@@ -919,6 +922,9 @@ img {
                 opacity: 1;
             }
         }
+    }
+    .logo{
+        width: 150px;
     }
 }
 
