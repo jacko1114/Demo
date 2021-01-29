@@ -1,3 +1,21 @@
+let cart = [{
+        price: 7346,
+        title: "精選套裝",
+        items: ["冷氣機清潔", "洗衣機清潔", "廚房清潔", "客房清潔"]
+    },
+    {
+        price: 2346,
+        title: "精選套裝2",
+        items: ["洗衣機清潔", "廚房清潔", "客房清潔"]
+
+    },
+    {
+        price: 2134,
+        title: "精選套裝3",
+        items: ["洗衣機清潔", "廚房清潔", "客房清潔", "冷氣機清潔"]
+
+    }
+]
 const openHamburger = () => {
     document.querySelector(".hamburger").addEventListener("click", () => {
         document.querySelector(".side-menu").classList.add("show");
@@ -119,10 +137,6 @@ const fakeLogout = () => {
         createLogIn();
         fakeLogin();
     })
-    document.querySelector("#side-logout").addEventListener("click", function () {
-        createLogIn();
-        fakeLogin();
-    })
 }
 const createMemberCenter = () => {
     if (document.querySelector("#login-register")) {
@@ -179,7 +193,7 @@ const hoverEffect = () => {
     const imgSrc = document.querySelectorAll(".section_collapse-zone a");
     imgSrc.forEach(item => {
         let img = document.createElement("img");
-        img.setAttribute("style", "opacity:0;position:absolute; z-index:-1;top:0;left:0;");
+        img.setAttribute("style", "opacity:0;position:absolute; z-index:-1;top:0;left:0;width:100%");
         img.src = item.dataset.imgsrc;
         document.querySelector("body").append(img);
 
@@ -226,6 +240,16 @@ const swipeDeleteEffect = () => {
 const countCartAmount = () => {
     let count = document.querySelectorAll(".cart-product-item").length;
 
+    if (count == 0) {
+        document.querySelector(".nav-bottom-item .red-dot").remove();
+    } else {
+        if(document.querySelector(".nav-bottom-item .red-dot")){
+            document.querySelector(".nav-bottom-item .red-dot").remove();
+        }
+        let span = document.createElement("span");
+        span.className = "count red-dot";
+        document.querySelector(".nav-bottom-item .fa-shopping-cart").prepend(span);
+    }
     document.querySelectorAll(".count").
     forEach(x => x.innerText = count);
 
@@ -258,6 +282,11 @@ window.addEventListener("load", () => {
     fakeLogin();
     imgLazyLoad();
     hoverEffect();
+
+    cart.forEach((x, i) => {
+        createCartCard(x.price, x.title, x.items, i + 1);
+    })
+
     swipeDeleteEffect();
     countCartAmount();
     countCartPrice();
@@ -274,5 +303,12 @@ window.addEventListener("resize", () => {
         document.querySelector(".side-menu").classList.remove("show");
     } else {
         document.querySelector(".cart-side-menu").classList.remove("open");
+    }
+
+    if (window.innerWidth < 1024) {
+        document.querySelector(".section_collapse-zone").classList.remove("open");
+        document.querySelector("#collapse").classList.remove("show");
+        document.querySelector(".all-service").classList.remove("active");
+        document.querySelector("body").classList.remove("open");
     }
 })

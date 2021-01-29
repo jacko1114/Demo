@@ -1,0 +1,129 @@
+.section_product {
+    margin-top: 90px;
+    padding-top: 30px;
+
+    .container-lg:nth-of-type(2) {
+        background: var(--light);
+    }
+
+    .product-pic {
+        img {
+            border-radius: 3px;
+        }
+    }
+
+    .product-content {
+        .content-footer {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+
+            p {
+                margin: 10px 0;
+                font-size: 30px;
+            }
+
+
+            .btn-group {
+                margin: 10px 0;
+
+                button {
+                    background: var(--primary-color);
+                    color: var(--light);
+                    margin: 0 5px;
+                    border-radius: 15px !important;
+                    padding: 5px 10px;
+                    font-size: 14px;
+
+                    &:hover {
+                        background: var(--primary-color-dark);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.section_product-info {
+    padding-top: 30px;
+    background: var(--light);
+
+    .product-tabs {
+        margin-top: 30px;
+        border-top: 1px solid var(--gray);
+        border-bottom: 1px solid var(--gray);
+
+        .nav-item {
+            a {
+                color: var(--gary);
+                font-size: 20px;
+
+                &.active {
+                    color: var(--light);
+                    background: var(--gray);
+                }
+
+                &:hover {
+                    color: var(--light);
+                    background: var(--dark);
+                }
+            }
+        }
+    }
+
+    .product-tab-item {
+        padding: 50px 15px 100px;
+        top: 30px;
+        left: 0;
+        opacity: 0;
+        display: none;
+
+        &:before {
+            position: absolute;
+        }
+
+        .intro {
+            margin-top: 40px;
+        }
+
+        .service {
+            margin-top: 40px;
+            display: flex;
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+
+            &-title,
+            &-region {
+                padding: 5px;
+            }
+
+            &-region {
+                border-left: 1px solid var(--gray);
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            display: block;
+        }
+
+    }
+
+    .comment {
+        margin-top: 40px;
+
+        &-item {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border-bottom: 1px solid #eee;
+
+            img {
+                width: 60px;
+                min-width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}
