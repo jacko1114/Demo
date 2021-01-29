@@ -724,12 +724,13 @@ img {
                 }
 
                 .detail {
+                    margin-top: 20px;
                     background: var(--primary-color);
                     color: var(--light);
-                    margin: 0 5px;
+                    margin: 0 5px 0 auto;
                     border-radius: 5px;
                     padding: 5px 9px;
-                    float: right;
+                    width: 25%;
                 }
 
                 .btn-group {

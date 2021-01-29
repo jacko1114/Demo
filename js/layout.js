@@ -1,18 +1,21 @@
-let cart = [{
+let cart = JSON.parse(localStorage.getItem("cart")) || [{
         price: 7346,
         title: "精選套裝",
-        items: ["冷氣機清潔", "洗衣機清潔", "廚房清潔", "客房清潔"]
+        items: ["冷氣機清潔", "洗衣機清潔", "廚房清潔", "客房清潔"],
+        id: 1
     },
     {
         price: 2346,
         title: "精選套裝2",
-        items: ["洗衣機清潔", "廚房清潔", "客房清潔"]
+        items: ["洗衣機清潔", "廚房清潔", "客房清潔"],
+        id: 2
 
     },
     {
         price: 2134,
         title: "精選套裝3",
-        items: ["洗衣機清潔", "廚房清潔", "客房清潔", "冷氣機清潔"]
+        items: ["洗衣機清潔", "廚房清潔", "客房清潔", "冷氣機清潔"],
+        id: 3
 
     }
 ]
@@ -225,6 +228,9 @@ const swipeDeleteEffect = () => {
                 item.classList.add("delete");
                 setTimeout(() => {
                     item.remove();
+                    let index = cart.findIndex(x => x.id == item.dataset.id);
+                    if (index != -1) cart.splice(index, 1);
+                    localStorage.setItem("cart", JSON.stringify(cart));
                     countCartAmount();
                     countCartPrice();
                 }, 500);
@@ -243,7 +249,7 @@ const countCartAmount = () => {
     if (count == 0) {
         document.querySelector(".nav-bottom-item .red-dot").remove();
     } else {
-        if(document.querySelector(".nav-bottom-item .red-dot")){
+        if (document.querySelector(".nav-bottom-item .red-dot")) {
             document.querySelector(".nav-bottom-item .red-dot").remove();
         }
         let span = document.createElement("span");
@@ -266,6 +272,75 @@ const countCartPrice = () => {
         document.querySelector(".cart-footer h2").innerText = `小計 : 0 元`;
     }
 }
+const createCartCard = (price, title, items, id) => {
+    let card = document.createElement("div");
+    card.className = "cart-product-item mb-3";
+    card.setAttribute("data-price", price);
+    card.setAttribute("data-id", id);
+
+    let row = document.createElement("div");
+    row.className = "row no-gutters w-100";
+
+    let col4 = document.createElement("div");
+    col4.classList.add("col-4");
+    let col8 = document.createElement("div");
+    col8.classList.add("col-8");
+
+    let img = document.createElement("img");
+    img.src = `https://picsum.photos/300/400/?random=${id}`;
+    img.classList = "w-100 h-100";
+
+    col4.append(img);
+
+    let cardBody = document.createElement("div");
+    cardBody.className = "card-body py-4 px-3 d-flex flex-column";
+
+    let h3 = document.createElement("h3");
+    h3.classList.add("card-title");
+    h3.textContent = title;
+
+    let ul = document.createElement("ul");
+    ul.classList.add("list-unstyled");
+
+    items.forEach(x => {
+        let li = document.createElement("li");
+        li.textContent = x;
+        ul.append(li);
+    })
+    let p = document.createElement("p");
+    p.className = "card-text pt-3";
+
+    let small = document.createElement("small");
+    small.classList.add("color-muted");
+    small.textContent = "超值優惠服務!我們服務，你可放心";
+
+    p.append(small);
+
+    let a = document.createElement("a");
+    a.setAttribute("href", "javascript:;");
+    a.className = "btn detail";
+    a.textContent = "詳情";
+
+    cardBody.append(h3, ul, p, a);
+    col8.append(cardBody);
+
+    let btnGroup = document.createElement("div");
+    btnGroup.classList.add("btn-group");
+
+    let btnConfirm = document.createElement("button");
+    btnConfirm.className = "btn confirm";
+    btnConfirm.textContent = "確認刪除";
+
+    let btnCancel = document.createElement("button");
+    btnCancel.className = "btn cancel";
+    btnCancel.textContent = "取消";
+
+    btnGroup.append(btnConfirm, btnCancel);
+    row.append(col4, col8, btnGroup);
+    card.appendChild(row);
+
+    document.querySelector(".section_cart-side-menu .cart-body").appendChild(card);
+}
 
 
 
@@ -283,8 +358,8 @@ window.addEventListener("load", () => {
     imgLazyLoad();
     hoverEffect();
 
-    cart.forEach((x, i) => {
-        createCartCard(x.price, x.title, x.items, i + 1);
+    cart.forEach(x => {
+        createCartCard(x.price, x.title, x.items, x.id);
     })
 
     swipeDeleteEffect();
