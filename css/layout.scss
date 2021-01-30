@@ -87,6 +87,23 @@ img {
     white-space: nowrap;
 }
 
+.btns {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
 .btn:focus,
 .btn:visited {
     box-shadow: none !important;
@@ -473,7 +490,7 @@ img {
         height: 100vh;
         z-index: 100;
         top: 0;
-        padding: 20px 40px 0 0;
+        padding: 10px 10px 0 0;
         background: var(--white);
         transition: .3s ease;
 
@@ -681,7 +698,7 @@ img {
 
     .cart {
         height: 100%;
-        padding: 0 30px;
+        padding: 0 15px;
         background: var(--light);
         box-shadow: -2px 0 10px #0000002d;
         display: flex;
@@ -691,8 +708,8 @@ img {
             height: 10%;
 
             i {
-                padding: 40px 20px 0 0;
-                font-size: 30px;
+                padding: 20px 20px 0 0;
+                font-size: 36px;
                 cursor: pointer;
             }
 
@@ -715,7 +732,7 @@ img {
             overflow-y: scroll;
             overflow-x: hidden;
             height: 50%;
-            margin: 60px 0 20px;
+            margin: 60px 0 0;
             position: relative;
 
             .cart-product-item {
@@ -741,7 +758,7 @@ img {
                     width: 40%;
                 }
 
-                .btn-group {
+                .btns-group {
                     position: absolute;
                     width: 100px;
                     height: 100%;
@@ -786,7 +803,7 @@ img {
                 &.remove {
                     transform: translateX(-100px);
 
-                    .btn-group {
+                    .btns-group {
                         opacity: 1;
                     }
                 }
@@ -843,6 +860,7 @@ img {
 
         .cart-footer {
             height: 40%;
+            border-top: 1px solid var(--black);
 
             button {
                 width: 100%;
@@ -943,11 +961,11 @@ img {
         }
 
         &-form {
-            width: 300px;
+            width: 100vw;
             box-shadow: 1px 1px 10px #00000080;
             border-radius: 10px;
             position: absolute;
-            right: -5px;
+            right: -20px;
             bottom: -900px;
             transition: .3s ease-in;
             opacity: 0;
@@ -974,7 +992,7 @@ img {
                 background: var(--white);
                 padding: 15px;
                 overflow-y: scroll;
-                height: 400px;
+                height: 300px;
 
                 .input-groupings {
                     padding: 10px;

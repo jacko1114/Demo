@@ -62,6 +62,8 @@
 }
 
 .section_all-service {
+    background: var(--light);
+
     .row {
         flex-direction: column;
     }
@@ -69,6 +71,7 @@
     .service-title {
         h2 {
             font-size: 28px;
+            letter-spacing: 5px;
         }
     }
 
@@ -104,6 +107,7 @@
 
             h3 {
                 font-size: 12px;
+                letter-spacing: 2px;
             }
         }
     }
@@ -232,6 +236,12 @@
 .section_image {
     padding: 100px 0;
 
+    .image-title {
+        h2 {
+            letter-spacing: 5px;
+        }
+    }
+
     .card {
         flex-direction: row !important;
         padding: 5px;
@@ -256,6 +266,12 @@
 .section_news {
     padding: 100px 0;
     background: var(--light);
+
+    .news-title {
+        h2 {
+            letter-spacing: 5px;
+        }
+    }
 
     .card {
         height: 320px;

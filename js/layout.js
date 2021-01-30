@@ -131,6 +131,7 @@ const fakeLogin = () => {
         })
     })
 }
+
 const fakeLogout = () => {
     document.querySelectorAll("[id*='logout']").forEach(x => {
         x.addEventListener("click", function () {
@@ -156,16 +157,16 @@ const createMemberCenter = () => {
     }
 
     let buttonMember = document.createElement("button");
-    buttonMember.className = "btn border rounded-pill border-skyblue color-skyblue member-center";
+    buttonMember.className = "btns border rounded-pill border-skyblue color-skyblue member-center";
     buttonMember.textContent = "會員中心";
     buttonMember.setAttribute("id", "member-center")
     document.querySelector(".nav_btn-group").prepend(buttonMember);
 }
 const createLogout = () => {
     let button = document.createElement("button");
-    button.classList.add("btn");
-    button.innerText = "登出";
-    button.setAttribute("id", "logout");
+    button.classList.add("btns");
+    button.textContent = "登出";
+    button.setAttribute("id", "nav-logout");
     document.querySelector(".nav_btn-group").prepend(button);
 
     let li = document.createElement("li");
@@ -188,14 +189,14 @@ const createLogIn = () => {
     if (document.querySelector("#member-center")) {
         document.querySelector("#member-center").remove();
     }
-    if (document.querySelector("#logout")) {
-        document.querySelector("#logout").remove();
+    if (document.querySelector("#nav-logout")) {
+        document.querySelector("#nav-logout").remove();
     }
     if (document.querySelector("#side-logout")) {
         document.querySelectorAll(".side-menu-nav .nav-item")[2].remove();
     }
     let button = document.createElement("button");
-    button.className = "btn border rounded-pill border-skyblue color-skyblue login-register";
+    button.className = "btns border rounded-pill border-skyblue color-skyblue login-register";
     button.setAttribute("id", "login-register");
     button.textContent = "註冊/登入";
 
@@ -203,7 +204,7 @@ const createLogIn = () => {
 
     if (isLogin == false) {
         let cartButton = document.createElement("button");
-        cartButton.className = "btn border rounded-pill border-skyblue color-skyblue login-register center";
+        cartButton.className = "btns border rounded-pill border-skyblue color-skyblue login-register center";
         cartButton.setAttribute("id", "cart-login-register");
         cartButton.textContent = "註冊/登入";
         document.querySelector(".cart-body").appendChild(cartButton);
@@ -370,21 +371,21 @@ const createCartCard = (price, title, items, id) => {
 
     let a = document.createElement("a");
     a.setAttribute("href", "javascript:;");
-    a.className = "btn detail";
+    a.className = "btns detail";
     a.textContent = "詳情";
 
     cardBody.append(h3, ul, p, a);
     col8.append(cardBody);
 
     let btnGroup = document.createElement("div");
-    btnGroup.classList.add("btn-group");
+    btnGroup.classList.add("btns-group");
 
     let btnConfirm = document.createElement("button");
-    btnConfirm.className = "btn confirm";
+    btnConfirm.className = "btns confirm";
     btnConfirm.textContent = "確認刪除";
 
     let btnCancel = document.createElement("button");
-    btnCancel.className = "btn cancel";
+    btnCancel.className = "btns cancel";
     btnCancel.textContent = "取消";
     btnGroup.append(btnConfirm, btnCancel);
     row.append(col4, col8, btnGroup);
@@ -448,6 +449,7 @@ window.addEventListener("load", () => {
     } else if (isLogin == true) {
         createLogout();
         createMemberCenter();
+        fakeLogout();
         if (cart.length == 0) {
             checkoutBtnControl();
             countCartAmount(0);
@@ -465,6 +467,7 @@ window.addEventListener("load", () => {
             toggleSideMenuSubItem(x, e);
         })
     })
+
 })
 
 window.addEventListener("resize", () => {
@@ -479,5 +482,8 @@ window.addEventListener("resize", () => {
         document.querySelector("#collapse").classList.remove("show");
         document.querySelector(".all-service").classList.remove("active");
         document.querySelector("body").classList.remove("open");
+    }
+    if (window.innerWidth > 1024 && document.querySelector(".contact-us-form").classList.contains("active")) {
+        document.querySelector(".contact-us-form").classList.remove("active");
     }
 })
