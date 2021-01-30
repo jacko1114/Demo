@@ -22,8 +22,8 @@ const switchTabs = () => {
 }
 
 const addCart = () => {
-    if (document.querySelector(".section_cart-side-menu .cart-body h3")) {
-        document.querySelector(".section_cart-side-menu .cart-body h3").remove();
+    if (document.querySelector(".section_cart-side-menu .cart-body h2")) {
+        document.querySelector(".section_cart-side-menu .cart-body h2").remove();
     }
     document.querySelector(".content-footer .add-cart").addEventListener("click", function () {
         if (isLogin == false) {
@@ -32,7 +32,7 @@ const addCart = () => {
         }
         let price = +document.querySelector(".section_product .content-footer .price").textContent.replace(",", "");
         let title = document.querySelector(".section_product .content-header h2").textContent;
-        let id = Math.max(...Array.from(document.querySelectorAll(".cart-product-item")).map(x => +x.dataset.id));
+        let id = document.querySelectorAll(".cart-product-item").length == 0 ? 0 : Math.max(...Array.from(document.querySelectorAll(".cart-product-item")).map(x => +x.dataset.id));
         createCartCard(price, title, ["傢俱、櫥櫃外觀擦拭", "地面拖地", "地面除塵清潔", "櫃外擦拭"], id + 1);
 
         cart.push({
@@ -45,6 +45,8 @@ const addCart = () => {
         countCartAmount(cart.length);
         countCartPrice();
         swipeDeleteEffect();
+        checkoutBtnControl();
+        toggleTip();
     })
 }
 

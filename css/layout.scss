@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 
 :root {
-    --primary-color: #31c89b;
-    --primary-color-dark: #289575;
+    --primary-color: #c09ac2;
+    --primary-color-dark: #735d7d;
     --white: #fff;
     --gray: #aaa;
     --dark-blue: #24244e;
@@ -418,7 +418,10 @@ img {
 
     .logo {
         width: 100px;
-        border-radius: 5px;
+
+        img {
+            border-radius: 5px;
+        }
     }
 
     .collapse.navbar-collapse {
@@ -700,6 +703,11 @@ img {
 
             .tip {
                 color: #ff0000;
+                transition: .2s;
+
+                &.hide {
+                    opacity: 0;
+                }
             }
         }
 
@@ -725,13 +733,12 @@ img {
                 }
 
                 .detail {
-                    margin-top: 20px;
                     background: var(--primary-color);
                     color: var(--light);
                     margin: 0 5px 0 auto;
                     border-radius: 5px;
                     padding: 5px 9px;
-                    width: 25%;
+                    width: 40%;
                 }
 
                 .btn-group {
@@ -801,13 +808,36 @@ img {
             &::-webkit-scrollbar-track {
                 background: #908f8f36;
             }
-            h2.center{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                text-align: center;
-                width: 80%;
+
+            h4 {
+                font-size: 30px;
+
+                &.center {
+                    position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                }
+            }
+
+            button {
+                &.login-register {
+                    border-color: var(--primary-color) !important;
+                    margin-top: 10px;
+
+                    &:hover {
+                        background: var(--primary-color) !important;
+                        color: var(--white) !important;
+                    }
+                }
+
+                &.center {
+                    position: absolute;
+                    top: 55%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
             }
         }
 
