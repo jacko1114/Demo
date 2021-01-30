@@ -22,7 +22,14 @@ const switchTabs = () => {
 }
 
 const addCart = () => {
+    if (document.querySelector(".section_cart-side-menu .cart-body h3")) {
+        document.querySelector(".section_cart-side-menu .cart-body h3").remove();
+    }
     document.querySelector(".content-footer .add-cart").addEventListener("click", function () {
+        if (isLogin == false) {
+            alert("請先登入!!!");
+            return;
+        }
         let price = +document.querySelector(".section_product .content-footer .price").textContent.replace(",", "");
         let title = document.querySelector(".section_product .content-header h2").textContent;
         let id = Math.max(...Array.from(document.querySelectorAll(".cart-product-item")).map(x => +x.dataset.id));
@@ -32,10 +39,10 @@ const addCart = () => {
             price,
             title,
             items: ["傢俱、櫥櫃外觀擦拭", "地面拖地", "地面除塵清潔", "櫃外擦拭"],
-            id: id+1
+            id: id + 1
         });
         localStorage.setItem("cart", JSON.stringify(cart));
-        countCartAmount();
+        countCartAmount(cart.length);
         countCartPrice();
         swipeDeleteEffect();
     })

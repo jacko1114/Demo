@@ -708,6 +708,7 @@ img {
             overflow-x: hidden;
             height: 50%;
             margin: 60px 0 20px;
+            position: relative;
 
             .cart-product-item {
                 transition: .4s ease-in;
@@ -799,6 +800,14 @@ img {
 
             &::-webkit-scrollbar-track {
                 background: #908f8f36;
+            }
+            h2.center{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align: center;
+                width: 80%;
             }
         }
 
