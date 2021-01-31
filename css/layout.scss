@@ -46,18 +46,19 @@ img {
 }
 
 ::-webkit-scrollbar {
-    width: 1px;
+    width: 8px;
     position: absolute;
     right: -10px;
-    z-index: -1;
+    z-index: 1000;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #eeeded;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
+    background: var(--primary-color);
 }
 
 .dropdown-item {
@@ -617,7 +618,7 @@ img {
         left: 0;
         width: 100%;
         background: var(--light);
-        padding: 10px 30px;
+        padding: 5px 30px;
         box-shadow: 0 -1px 4px var(--gray);
 
         &-item {
@@ -633,7 +634,7 @@ img {
                 }
 
                 i {
-                    font-size: 28px;
+                    font-size: 24px;
                     color: var(--gray);
                     transition: .3s ease-in;
                     position: relative;
@@ -1127,6 +1128,36 @@ img {
         }
     }
 
+    .section_nav {
+        .logo {
+            width: 150px;
+        }
+    }
+}
+
+@media screen and (min-width:992px) {
+    .section_nav {
+        .hamburger {
+            margin-left: auto;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: none !important;
+        }
+
+
+    }
+
+    .section_collapse-zone {
+        width: 100%;
+        z-index: 2;
+
+        &.open {
+            background: #33333380;
+            height: 100vh;
+        }
+    }
+
     .section_footer {
         .row:nth-of-type(1) {
             .col-12:nth-of-type(1) {
@@ -1169,36 +1200,6 @@ img {
                 width: 400px;
                 right: 0;
             }
-        }
-    }
-
-    .section_nav {
-        .logo {
-            width: 150px;
-        }
-    }
-}
-
-@media screen and (min-width:992px) {
-    .section_nav {
-        .hamburger {
-            margin-left: auto;
-        }
-
-        .navbar-expand-lg .navbar-collapse {
-            display: none !important;
-        }
-
-
-    }
-
-    .section_collapse-zone {
-        width: 100%;
-        z-index: 2;
-
-        &.open {
-            background: #33333380;
-            height: 100vh;
         }
     }
 }

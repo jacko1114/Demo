@@ -14,11 +14,10 @@
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/singleProduct.css">
-    <title>uCleaner-打掃服務</title>
+    <link rel="stylesheet" href="css/allServiceView.css">
+    <title>全部服務 - uCleaner - 打掃服務</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/singleProduct.css">
+    <link rel="stylesheet" href="/css/icofont.min.css">
 </head>
 
 <body>
@@ -41,10 +40,10 @@
         <div class="ash ash-right"></div>
     </section>
     <section class="section_nav">
-        <div class="container-xxl">
-            <nav class="navbar navbar-expand-lg navbar-light position-static p-0">
+        <div class="container-xxl p-0">
+            <nav class="navbar navbar-expand-lg navbar-light position-static">
                 <a class="logo" href="/">
-                    <img src="./images/logo.png" alt="Logo" class="w-100 h-100">
+                    <img src="./images/logo.png" alt="Logo" class="w-100">
                 </a>
                 <button class="hamburger" type="button">
                     <span class="navbar-toggler-icon"></span>
@@ -242,7 +241,7 @@
                                 data-imgSrc="https://picsum.photos/300/150/?random=11">冷氣機清洗</a>
                         </div>
                     </div>
-                    <div class="col-3 d-flex">
+                    <div class="col-2 d-flex">
                         <div class="collapse_section px-2">
                             <h5 class="white-space pl-3 pt-4">其他服務</h5>
                             <a class="dropdown-item color-gray" href="javascript:;"
@@ -251,7 +250,7 @@
                                 data-imgSrc="https://picsum.photos/300/150/?random=13">地板保養</a>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="collapse_section">
                             <img src="./images/loading.gif" data-src="https://picsum.photos/300/150/?random=1"
                                 class="d-block rounded mt-4 lazyload" style="width: 300px;height:150px;">
@@ -260,7 +259,6 @@
                 </div>
             </div>
         </div>
-
     </section>
     <section class="section_cart-side-menu cart-side-menu position-fixed">
         <div class="container-fluid">
@@ -274,7 +272,8 @@
                             </div>
                             <span class="tip">※向左滑動以便進行刪除</span>
                         </div>
-                        <div class="cart-body"></div>
+                        <div class="cart-body">
+                        </div>
                         <div class="cart-footer mt-4">
                             <h2 class="mt-2 mb-5"></h2>
                             <button class="btns checkout">結帳去</button>
@@ -284,138 +283,185 @@
             </div>
         </div>
     </section>
-    <section class="section_product">
-        <div class="container-lg">
+
+    <!-- Start -->
+    <section class="section_banner">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-md-6  d-flex justify-content-center align-items-center">
-                    <div class="product-pic">
-                        <img src="./images/clean.jpg" alt="打掃" class="w-100">
+                <div class="col-12">
+                    <h2>各式專業服務</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section_all-service-view">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>鐘點清潔</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>專業清潔每小時500 - 600元不等創造舒適的窩</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-man-in-glasses"></i>
+                                <p>鐘點清潔</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="product-content p-3">
-                        <div class="content-header">
-                            <h2>居家清潔</h2>
-                        </div>
-                        <div class="content-body">
-                            <ul>
-                                <li class="content-region">服務範圍 : 台北市 、 新北市</li>
-                                <li>
-                                    <div class="content-service">
-                                        服務內容 :
-                                        <ul class="pl-4 list-unstyled">
-                                            <li>房 - 傢俱、櫥櫃外觀擦拭、地面拖地</li>
-                                            <li>廳 - 地面除塵清潔、櫃外擦拭</li>
-                                            <li>廚房 - 抽油煙機清潔</li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content-info">
-                                        注意事項 :
-                                        <ul class="pl-4 list-unstyled">
-                                            <li>實際依照現場狀況為主，若現場判斷時間不足服務人員皆會與您報告可完成進度</li>
-                                            <li>現場如有垃圾服務人員僅協助打包，無法協助帶走垃圾</li>
-                                            <li>黴菌、或水垢深根過長時間，可能無法完全清楚</li>
-                                            <li>若有需處理高處，需要請客人自備梯子</li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="content-footer">
-                            <p>價格 : <span class="price">2,400</span></p>
-                            <div class="btn-group">
-                                <button class="btns checkout">直接結帳</button>
-                                <button class="btns add-cart">加入購物車</button>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>冷氣機清洗</h4>
                             </div>
-                        </div>
+                            <div class="view-item-content">
+                                <p>與PM 2.5說不，還你清新空氣</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-energy-air"></i>
+                                <p>冷氣機清洗</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>洗衣機清洗</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>與藏身許久煩人的汙垢宣戰</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-washing-machine"></i>
+                                <p>洗衣機清洗</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>收納整理</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>收納整理，迎接好心情</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-briefcase-2"></i>
+                                <p>收納整理</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>裝潢清潔</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>裝潢後的清潔交給我們，木屑粉塵一網打盡</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-bucket1"></i>
+                                <p>裝潢清潔</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>除塵蟎</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>除去塵蟎，拒當過敏兒</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-bug"></i>
+                                <p>除塵蟎</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>清毒除蟲</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>專業消毒噴霧機，擊退蟲害SO EASY</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-bug"></i>
+                                <p>清毒除蟲</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>辦公室定期</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>舒適上班環境，工作效率DOUBLE</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-architecture-alt"></i>
+                                <p>辦公室定期</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>地板保養</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>石板打蠟與木質地板保養，換得家裡大家開心</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-triangle"></i>
+                                <p>地板保養</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="service-view-item">
+                        <a href="javascript:;">
+                            <div class="view-item-title">
+                                <h4>洗衣服務</h4>
+                            </div>
+                            <div class="view-item-content">
+                                <p>外送洗衣，以袋計價，隔日取件</p>
+                            </div>
+                            <div class="view-item-hide">
+                                <i class="icofont-jacket"></i>
+                                <p>洗衣服務</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section_product-info">
-        <div class="container-lg">
-            <div class="product-tabs">
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">介紹</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">服務規格</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">評價</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="product-tab-item">
-                <h2>介紹</h2>
-                <p>不管你是不知道該怎麼掃，還是你懶得掃​
-                    不用煩惱交給我們就對了！
-                    客廳、臥室、廚衛、陽台甚至是衣服的收納
-                    交給我們通通一手包辦​</p>
-            </div>
-            <div class="product-tab-item">
-                <h2>服務規格</h2>
-                <div class="service d-flex">
-                    <div class="service-title w-50">
-                        服務地區
-                    </div>
-                    <div class="service-region w-50">
-                        台北市、新北市
-                    </div>
-                </div>
-            </div>
-            <div class="product-tab-item active">
-                <h2>商品評價</h2>
-                <div class="comment">
-                    <h4>居家清潔 - 共 2 則評論</h4>
-                    <div class="comment-item">
-                        <div class="row">
-                            <div class="col-2 pr-0 d-flex justify-content-center align-items-center">
-                                <img src="./images/p1.jpg" alt="人物" class="user rounded-circle d-block">
-                            </div>
-                            <div class="col-6">
-                                <p>陳先生 - <span>2021/1/28</span></p>
-                                <p>好棒棒!!!</p>
-                            </div>
-                            <div class="col-4 d-flex align-items-center justify-content-center">
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comment-item">
-                        <div class="row">
-                            <div class="col-2 pr-0 d-flex justify-content-center align-items-center">
-                                <img src="./images/p1.jpg" alt="人物" class="user rounded-circle d-block">
-                            </div>
-                            <div class="col-6">
-                                <p>林小姐 - <span>2021/1/26</span></p>
-                                <p>非常好!!!</p>
-                            </div>
-                            <div class="col-4 d-flex align-items-center justify-content-center">
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                                <i class="fas fa-star color-yellow pr-1"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-none">
-                    <p>目前沒有評論</p>
-                    <p>只有註冊並且購買過商品的顧客才能撰寫評價</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- End -->
+
     <footer class="section_footer">
         <div class="container-xxl">
             <div class="row">
@@ -436,7 +482,7 @@
                         <li>台北市大安區忠孝東路三段96號11號樓之1</li>
                     </ul>
                 </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-4 d-flex align-items-center">
                     <a href="https://line.me/ti/p/8W34BVyjk1" target="_blank" class="line-link">
                         <img src="./images/loading.gif" data-src="./images/line.png" alt="line" class="lazyload"></a>
                     <div class="logo pl-4">
@@ -500,7 +546,6 @@
         crossorigin="anonymous"></script>
     <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     <script src="./js/layout.js"></script>
-    <script src="./js/singleProduct.js"></script>
 </body>
 
 </html>
