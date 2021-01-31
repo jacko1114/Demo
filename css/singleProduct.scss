@@ -127,3 +127,12 @@
         }
     }
 }
+
+@media screen and (min-width:1024px) {
+    .section_product-info {
+        .product-tabs {
+            width: 50%;
+            margin: auto;
+        }
+    }
+}

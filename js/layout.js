@@ -281,13 +281,16 @@ const swipeDeleteEffect = () => {
                 setTimeout(() => {
                     item.remove();
                     let index = cart.findIndex(x => x.id == item.dataset.id);
-                    if (index != -1) cart.splice(index, 1);
-                    localStorage.setItem("cart", JSON.stringify(cart));
-                    countCartAmount(cart.length);
-                    countCartPrice();
-                    checkoutBtnControl();
-                    toggleTip();
-                    if (cart.length == 0) cartStatus("你目前的購物車是空的");
+                    if (index != -1) {
+                        cart.splice(index, 1);
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        countCartAmount(cart.length);
+                        countCartPrice();
+                        checkoutBtnControl();
+                        toggleTip();
+                        if (cart.length == 0) cartStatus("你目前的購物車是空的");
+                        toastr.error("成功刪除!!");
+                    }
                 }, 500);
             })
 

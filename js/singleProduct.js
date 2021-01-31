@@ -1,5 +1,16 @@
+toastr.options = {
+    "closeButton": true, 
+    "positionClass": "toast-top-center",
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000", 
+    "extendedTimeOut": "1000", 
+    "showEasing": "swing",
+    "hideEasing": "linear", 
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
 const switchTabs = () => {
-
     document.querySelectorAll(".product-tabs .nav-link").forEach((x, index) => {
         x.addEventListener("click", () => {
             //切換tabs
@@ -27,7 +38,7 @@ const addCart = () => {
     }
     document.querySelector(".content-footer .add-cart").addEventListener("click", function () {
         if (isLogin == false) {
-            alert("請先登入!!!");
+            toastr.warning("請先註冊或登入!!!");
             return;
         }
         let price = +document.querySelector(".section_product .content-footer .price").textContent.replace(",", "");
@@ -47,6 +58,7 @@ const addCart = () => {
         swipeDeleteEffect();
         checkoutBtnControl();
         toggleTip();
+        toastr.success("成功加入至購物車!");
     })
 }
 
