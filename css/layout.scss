@@ -207,6 +207,9 @@ img {
         opacity: 1;
     }
 }
+.toast-top-center{
+    margin-top: 60px;
+}
 
 
 
@@ -885,6 +888,7 @@ img {
 .section_footer {
     padding: 50px 0;
     background: var(--dark-blue);
+    box-shadow: 1px -1px 10px #ececec80;
 
     .row:nth-of-type(1) {
         .col-12:nth-of-type(1) {
@@ -1069,6 +1073,7 @@ img {
         }
     }
 }
+
 
 @media screen and (min-width:768px) {
     .section_loading {

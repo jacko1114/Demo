@@ -1,5 +1,18 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 let isLogin = JSON.parse(localStorage.getItem("login")) || false;
+toastr.options = {
+    "closeButton": true,
+    "positionClass": "toast-top-center",
+    "showDuration": "3300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
+
 const openHamburger = () => {
     document.querySelector(".hamburger").addEventListener("click", () => {
         document.querySelector(".side-menu").classList.add("show");
@@ -143,7 +156,6 @@ const fakeLogout = () => {
             countCartAmount(0);
             toggleTip();
             checkoutBtnControl();
-            console.log(isLogin)
             localStorage.setItem("login", isLogin);
         })
     })
@@ -289,7 +301,7 @@ const swipeDeleteEffect = () => {
                         checkoutBtnControl();
                         toggleTip();
                         if (cart.length == 0) cartStatus("你目前的購物車是空的");
-                        toastr.error("成功刪除!!");
+                        toastr.info("成功刪除!!");
                     }
                 }, 500);
             })

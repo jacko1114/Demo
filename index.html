@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <!-- layout-nav Start -->
     <section class="section_loading">
         <div class='broom'>
             <div class='broom-handle'></div>
@@ -261,6 +262,32 @@
         </div>
 
     </section>
+    <section class="section_cart-side-menu cart-side-menu position-fixed">
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-12 col-lg-5 col-xl-4">
+                    <div class="cart">
+                        <div class="cart-header pb-2 mb-5">
+                            <div class="cart-title">
+                                <i class="fas fa-times float-right" id="cart-close"></i>
+                                <h2>你的購物車(<span class="count"></span>)</h2>
+                            </div>
+                            <span class="tip">※向左滑動以便進行刪除</span>
+                        </div>
+                        <div class="cart-body">
+                        </div>
+                        <div class="cart-footer mt-4">
+                            <h2 class="mt-2 mb-5"></h2>
+                            <button class="btns checkout">結帳去</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- layout-nav  -->
+    
+    <!-- Index Start -->
     <section class="section_carousel owl-carousel">
         <div class="carousel_item1">
             <div class="container ml-0">
@@ -336,29 +363,6 @@
                         <h2>隱藏版文件希望確保平時消失</h2>
                         <p>商標促銷股票一週<br>需求不是確保誠信有</p>
                         <a href="javascript:;">立刻預約</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section_cart-side-menu cart-side-menu position-fixed">
-        <div class="container-fluid">
-            <div class="row justify-content-end">
-                <div class="col-12 col-lg-5 col-xl-4">
-                    <div class="cart">
-                        <div class="cart-header pb-2 mb-5">
-                            <div class="cart-title">
-                                <i class="fas fa-times float-right" id="cart-close"></i>
-                                <h2>你的購物車(<span class="count"></span>)</h2>
-                            </div>
-                            <span class="tip">※向左滑動以便進行刪除</span>
-                        </div>
-                        <div class="cart-body">
-                        </div>
-                        <div class="cart-footer mt-4">
-                            <h2 class="mt-2 mb-5"></h2>
-                            <button class="btns checkout">結帳去</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -756,6 +760,8 @@
             </div>
         </div>
     </section>
+    <!-- Index End -->
+
     <footer class="section_footer">
         <div class="container-xxl">
             <div class="row">
@@ -816,7 +822,7 @@
                             </div>
                             <div class="input-groupings">
                                 <label for="contact_phone">電話</label>
-                                <input type="phone" name="" id="contact_phone">
+                                <input type="tel" name="" id="contact_phone">
                             </div>
                             <div class="input-groupings">
                                 <label for="contact_content">訊息</label>

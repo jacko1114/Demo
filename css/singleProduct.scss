@@ -1,5 +1,5 @@
 .section_product {
-    margin-top: 90px;
+    margin: 100px 0;
     padding-top: 30px;
 
     .container-lg:nth-of-type(2) {
@@ -83,6 +83,9 @@
             position: absolute;
         }
 
+        > p{
+            margin-top: 30px;
+        }
         .intro {
             margin-top: 40px;
         }
