@@ -648,10 +648,12 @@ img {
         left: 0;
         width: 100%;
         background: var(--light);
-        padding: 5px 30px;
         box-shadow: 0 -1px 4px var(--gray);
+        transition: .3s ease-in;
 
         &-item {
+            padding: 5px 10px 5px 5px;
+
             a {
                 display: flex;
                 flex-direction: column;
@@ -688,6 +690,17 @@ img {
                 }
             }
         }
+    }
+}
+@keyframes collpase{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(93%) rotate(180deg);
     }
 }
 
@@ -850,7 +863,7 @@ img {
             }
 
             &::-webkit-scrollbar-thumb {
-                background: var(--gray);
+                background: var(--primary-color-dark);
             }
 
             &::-webkit-scrollbar-track {
@@ -1049,7 +1062,7 @@ img {
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    background: var(--gray);
+                    background: var(--primary-color-dark);
                 }
 
                 &::-webkit-scrollbar-track {
