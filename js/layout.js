@@ -3,9 +3,9 @@ let isLogin = JSON.parse(localStorage.getItem("login")) || false;
 toastr.options = {
     "closeButton": true,
     "positionClass": "toast-top-center",
-    "showDuration": "3300",
+    "showDuration": "1300",
     "hideDuration": "1000",
-    "timeOut": "5000",
+    "timeOut": "3000",
     "extendedTimeOut": "1000",
     "showEasing": "swing",
     "hideEasing": "linear",
@@ -301,7 +301,7 @@ const swipeDeleteEffect = () => {
                         checkoutBtnControl();
                         toggleTip();
                         if (cart.length == 0) cartStatus("你目前的購物車是空的");
-                        toastr.info("成功刪除!!");
+                        toastr.info(`"${item.querySelector(".card-title").textContent}"<span style="float:right;">成功刪除!!</span>`);
                     }
                 }, 500);
             })
