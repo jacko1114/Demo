@@ -692,14 +692,17 @@ img {
         }
     }
 }
-@keyframes collpase{
-    0%{
+
+@keyframes collpase {
+    0% {
         transform: translateX(0);
     }
-    50%{
+
+    50% {
         transform: translateX(100%);
     }
-    100%{
+
+    100% {
         transform: translateX(93%) rotate(180deg);
     }
 }
@@ -1276,20 +1279,9 @@ img {
     }
 
     .section_footer {
-        background: var(--white);
-
         li,
         a {
-            color: var(--dark);
             padding: 5px 0;
-        }
-
-        p {
-            color: var(--dark);
-        }
-
-        hr {
-            background: var(--dark);
         }
 
         .contact-us {
