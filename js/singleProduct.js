@@ -21,11 +21,10 @@ const switchTabs = () => {
 }
 
 const addCart = () => {
-    if (document.querySelector("h4.center")) {
-        document.querySelector("h4.center").remove();
-        alert("aaaa")
-    }
     document.querySelector(".content-footer .add-cart").addEventListener("click", function () {
+        if (document.querySelector("h4.center")) {
+            document.querySelector("h4.center").remove();
+        }
         if (isLogin == false) {
             toastr.warning("請先註冊或登入!!!");
             return;
